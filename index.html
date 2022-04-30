@@ -4,15 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Josefin+Sans:wght@300&family=Playfair+Display:ital@1&family=Raleway:wght@200;400&family=Ramaraja&family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
     <title>Landing Page</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        div{padding: 5%;}
+        h1{margin: 1%;}
+        p{margin: 1%;}
+        img{
+            width: 30%;
+            height: 30%;
+            margin: 3%;
+        }
+        button{
+            width: 25%;
+            height: 6vh;
+            border-radius: 25px;
+            margin: 0.5%;
+            border: solid black 1px;
+        }
+        #LoginBtn{background-color: #F54E4E;}
+        #SignUpBtn{background-color: #5A54FF;}
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <div>
         <h1>Hello There!</h1>
         <p>Welcome to our website, we hope that you have a great experience!</p>
         <img src="./Images/IMG1.png"> <br>
-        <button><a href="./Login Page/index.html">Login</a></button> <br>
-        <button><a href="./Sign Up Page/index.html">Sign Up</a></button>
+        <button id="LoginBtn"><a href="./Login Page/index.html">Login</a></button> <br>
+        <button id="SignUpBtn"><a href="./Sign Up Page/index.html">Sign Up</a></button>
     </div>
 </body>
 </html>
