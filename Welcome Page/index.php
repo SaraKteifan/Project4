@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,9 +45,12 @@
         <p>Hello there! We are extremely happy to have you with us and hope you to have a great experience throughout your time here, Enjoy!</p>
         <img src="../Images/IMG1.png">
         <div id="box">
-            <p>Full Name:</p>
-            <p>Email:</p>
-            <p>Mobile:</p>
+            <p>Full Name: <?php echo "<span style='color:#5A54FF; font-weight: bold;'>" .$_SESSION["userName"] 
+            ."</span>"; ?></p>
+            <p>Email: <?php echo "<span style='color:#5A54FF; font-weight: bold;'>" .$_SESSION["userEmail"] 
+            ."</span>"; ?></p>
+            <p>Mobile: <?php echo "<span style='color:#5A54FF; font-weight: bold;'>" .$_SESSION["userMobile"] 
+            ."</span>"; ?></p>
         </div>
     </div>
 </body>

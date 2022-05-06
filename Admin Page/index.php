@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +21,15 @@
         }
         div{padding: 5%;}
         h1{margin: 1%;}
-        table, th, td {
+        th, td {
             border: 1px solid black;
-            border-collapse: collapse;
             text-align: center;
             padding: 8px;
         }
         table{
             margin: auto;
-            
+            text-align: center;
+            padding: 8px;
         }
     </style>
 </head>
@@ -41,22 +46,20 @@
             <th>Account Cration Date</th>
             <th>Last Login Date</th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <?php
+        $id= 1;
+        foreach ($_SESSION["usersData"] as $value) {
+            echo "<tr>
+                    <td>".$id."</td>
+                    <td>".$value["name"]."</td>
+                    <td>".$value["email"]."</td>
+                    <td>".$value["password"]."</td>
+                    <td>".$value["Cration_Date"]."</td>
+                    <td>".$value["Last-Login-Date"]."</td>
+                </tr>";
+            $id++;
+        }
+        ?>
     </table>
 </div>
 </body>
