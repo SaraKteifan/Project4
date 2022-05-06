@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["userName"]= $value["name"];
                 $_SESSION["userMobile"]= $value["mobile"];
                 $_SESSION["usersData"][$key]["Last-Login-Date"]= date("d-m-Y");
+                $_SESSION["usersData"];
                 header('Location: ../Welcome Page/index.php');
             }else if($LoginEmail == $value["email"] && $LoginPassword != $value["password"]){
                 echo "<span style='color: red;'> The password is wrong </span>";

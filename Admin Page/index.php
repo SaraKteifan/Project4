@@ -54,7 +54,7 @@ session_start();
                     <td>".$value["name"]."</td>
                     <td>".$value["email"]."</td>
                     <td>".$value["password"]."</td>
-                    <td>".$value["Cration_Date"]."</td>
+                    <td>".$value["Creation_Date"]."</td>
                     <td>".$value["Last-Login-Date"]."</td>
                 </tr>";
             $id++;

@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     else{
         $Cration_Date= date("d-m-Y");
-        $arr= ["email"=> $signUpEmail, "mobile"=>$mobile, "name"=> $fullName, "password"=>$SignUpPassword, "birthDate"=> $birthDate, "Creation_Date"=>$Cration_Date, "Last-Login-Date"];
+        $arr= ["email"=> $signUpEmail, "mobile"=>$mobile, "name"=> $fullName, "password"=>$SignUpPassword, "birthDate"=> $birthDate, "Creation_Date"=>$Cration_Date, "Last-Login-Date" =>"haven't login yet"];
         array_push($_SESSION["usersData"],$arr);
         header('Location: ../Login Page/index.php');
     }
