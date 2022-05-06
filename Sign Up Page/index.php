@@ -161,12 +161,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             font-weight: bold;
             color: black;
         }
+        @media (min-width:2000px)
+        {
+            body{font-size: 30px;}
+            h1{font-size: 50px;}
+            input{font-size: 30px;}
+            input::placeholder {font-size: 28px;}
+            button{font-size: 30px;}
+        }
+        @media (max-width:1000px)
+        {
+            input{width: 30%;}
+        }
+        @media (max-width:700px)
+        {
+            body{font-size: 16px;}
+            h1{font-size: 32px;}
+            input{font-size: 16px;}
+            input::placeholder {font-size: 14px;}
+            button{font-size: 16px;}
+        }
+        @media (max-width:380px)
+        {
+            body{font-size: 12px;}
+            h1{font-size: 28px;}
+            input{font-size: 12px;
+                width: 35%;
+            }
+            input::placeholder {font-size: 10px;}
+            button{font-size: 12px;}
+        }
     </style>
 </head>
 <body>
     <div>
         <h1>Sign Up</h1>
-        <p id="p1">Creat an Account, it's free!</p>
+        <p id="p1">Create an Account, it's free!</p>
         <form action="" method="post">
             <label for="SignUpEmail" id="SignUpEmailLabel">Email</label> <br>
             <input type="text" id="SignUpEmail" name="SignUpEmail" placeholder="abc@gmail.com" 

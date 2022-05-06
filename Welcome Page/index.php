@@ -37,6 +37,34 @@ session_start();
             height: 30%;
             margin: 1%;
         }
+        @media (min-width:2000px)
+        {
+            body{font-size: 30px;}
+            h1{font-size: 50px;}
+        }
+        @media (max-width:1000px)
+        {
+            #box{margin: 2% 15%;}
+        }
+        @media (max-width:700px)
+        {
+            body{font-size: 16px;}
+            h1{font-size: 32px;}
+            #box{margin: 2% 10%;}
+            img{
+            width: 40%;
+            height: 40%;
+            }
+        }
+        @media (max-width:380px)
+        {
+            body{font-size: 12px;}
+            h1{font-size: 28px;}
+            img{
+            width: 50%;
+            height: 50%;
+            }
+        }
     </style>
 </head>
 <body>

@@ -20,7 +20,7 @@ session_start();
             font-family: 'Josefin Sans', sans-serif;
         }
         div{padding: 5%;}
-        h1{margin: 1%;}
+        h1{margin: 1% 0;}
         th, td {
             border: 1px solid black;
             text-align: center;
@@ -31,13 +31,28 @@ session_start();
             text-align: center;
             padding: 8px;
         }
+        @media (min-width:2000px)
+        {
+            body{font-size: 30px;}
+            h1{font-size: 50px;}
+        }
+        @media (max-width:700px)
+        {
+            body{font-size: 16px;}
+            h1{font-size: 32px;}
+        }
+        @media (max-width:380px)
+        {
+            body{font-size: 12px;}
+            h1{font-size: 28px;}
+        }
     </style>
 </head>
 <body>
     
     <div>
         <h1>Users Data</h1>
-       <table> 
+        <table> 
         <tr>
             <th>Id</th>
             <th>Name</th>

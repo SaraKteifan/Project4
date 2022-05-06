@@ -1,6 +1,6 @@
 <?php
 session_start();
-print_r($_SESSION["usersData"]);
+// print_r($_SESSION["usersData"]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $LoginEmail= $_POST["LoginEmail"];
@@ -107,6 +107,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             font-weight: bold;
             color: black;
         }
+        @media (min-width:2000px)
+        {
+            body{font-size: 30px;}
+            h1{font-size: 50px;}
+            input{font-size: 30px;}
+            input::placeholder {font-size: 28px;}
+            button{font-size: 30px;}
+        }
+        @media (max-width:1000px)
+        {
+            input{width: 30%;}
+        }
+        @media (max-width:700px)
+        {
+            body{font-size: 16px;}
+            h1{font-size: 32px;}
+            input{font-size: 16px;}
+            input::placeholder {font-size: 14px;}
+            button{font-size: 16px;}
+        }
+        @media (max-width:380px)
+        {
+            body{font-size: 12px;}
+            h1{font-size: 28px;}
+            input{font-size: 12px;
+                width: 35%;
+            }
+            input::placeholder {font-size: 10px;}
+            button{font-size: 12px;}
+        }
     </style>
 </head>
 <body>
@@ -124,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <button type="submit">Login</button> <br>
         </form>
-        <p id="p2">Dont have an account?<a href="../Sign Up Page/index.php">Sign Up</a></p>
+        <p id="p2">Don't have an account?<a href="../Sign Up Page/index.php">Sign Up</a></p>
     </div>
 </body>
 </html>
