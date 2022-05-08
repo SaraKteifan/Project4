@@ -22,11 +22,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $diff = date_diff(date_create($birthDate), date_create($today));
     }
 
+    foreach ($_SESSION["usersData"] as $key => $value) {
+        if($signUpEmail == $value["email"]){
+            $alreadyReg= true;
+            break;
+        }else{
+            $alreadyReg= false;
+        }
+    }
+
     if(empty($signUpEmail)){
         $signUpEmailReq= "<span style='color: red;'> Please enter your email </span>";
         echo $signUpEmailReq;
     }else if(!preg_match($email_pattern, $signUpEmail)){
         echo "<span style='color: red;'> The email should follow that pattern: abc@gmail.com </span>";
+    }else if($alreadyReg){
+        echo "<span style='color: red;'> You are already registered!</span>";
     }
 
     else if(empty($mobile)){
@@ -74,17 +85,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     else{
         $Cration_Date= date("d-m-Y");
-        $arr= ["email"=> $signUpEmail, "mobile"=>$mobile, "name"=> $fullName, "password"=>$SignUpPassword, "birthDate"=> $birthDate, "Creation_Date"=>$Cration_Date, "Last-Login-Date" =>"haven't login yet"];
+        $arr= ["email"=> $signUpEmail, "mobile"=>$mobile, "name"=> $fullName, "password"=>$SignUpPassword, "birthDate"=> $birthDate, "admin"=>false, "Creation_Date"=>$Cration_Date, "Last-Login-Date" =>"haven't login yet"];
+        if($signUpEmail == "sara@gmail.com") $arr["admin"]= true;
         array_push($_SESSION["usersData"],$arr);
         header('Location: ../Login Page/index.php');
     }
 
+    
     if(!empty($signUpEmail)) $x1= $signUpEmail;
     if(!empty($mobile)) $x2= $mobile;
     if(!empty($fullName)) $x3= $fullName;
     if(!empty($birthDate)) $x4= $birthDate;
 }
-
 
 ?>
 

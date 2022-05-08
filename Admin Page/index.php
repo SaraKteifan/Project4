@@ -18,18 +18,35 @@ session_start();
             text-align: center;
             font-size: 20px;
             font-family: 'Josefin Sans', sans-serif;
+            background-color: #5A54FF; 
         }
-        div{padding: 5%;}
-        h1{margin: 1% 0;}
+        div{
+            margin: 1%; 
+            padding: 2%;
+            background-color: white; 
+            height: 88vh;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+        }
+        h1{
+            margin: 1% 0;
+            color: #F54E4E;
+        }
         th, td {
             border: 1px solid black;
             text-align: center;
-            padding: 8px;
+            padding: 8px;   
         }
         table{
-            margin: auto;
             text-align: center;
             padding: 8px;
+        }
+        #logouta{
+            text-decoration: none;
+            color: #5A54FF;
+            margin: 2%;
+            font-weight: bold;
         }
         @media (min-width:2000px)
         {
@@ -64,6 +81,9 @@ session_start();
         <?php
         $id= 1;
         foreach ($_SESSION["usersData"] as $value) {
+            if($value["admin"] == true){
+                continue;
+            }
             echo "<tr>
                     <td>".$id."</td>
                     <td>".$value["name"]."</td>
@@ -76,6 +96,7 @@ session_start();
         }
         ?>
     </table>
+    <a id="logouta" href="../index.html">Log Out</a>
 </div>
 </body>
 </html>

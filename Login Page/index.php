@@ -13,34 +13,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     else if(empty($LoginPassword)){
         $LoginPasswordReq= "<span style='color: red;'> Please enter your password </span>";
         echo $LoginPasswordReq;
-    }
-    else{
-        if($LoginEmail == "Admin@admin.com" && $LoginPassword == "SuperUser*Admin99"){
-            header('Location: ../Admin Page/index.php');
-        }else if($LoginEmail == "Admin@admin.com" && $LoginPassword != "SuperUser*Admin99"){
-            echo "<span style='color: red;'> The password is wrong </span>";
-        }
+    }else{
         foreach ($_SESSION["usersData"] as $key => $value) {
-            // print_r($_SESSION["usersData"][count($_SESSION["usersData"])-1]);
-            if($LoginEmail == $value["email"] && $LoginPassword == $value["password"]){
+            if($LoginEmail == $value["email"] && $LoginPassword == $value["password"] && $value["admin"] == true){
+                header('Location: ../Admin Page/index.php');
+            }
+            if($LoginEmail == $value["email"] && $LoginPassword == $value["password"] && $value["admin"] == false){
                 $_SESSION["userEmail"]= $value["email"];
                 $_SESSION["userName"]= $value["name"];
                 $_SESSION["userMobile"]= $value["mobile"];
-                $_SESSION["usersData"][$key]["Last-Login-Date"]= date("d-m-Y");
+                $_SESSION["usersData"][$key]["Last-Login-Date"]= date("d-m-Y - h:i:sa");
                 $_SESSION["usersData"];
                 header('Location: ../Welcome Page/index.php');
             }else if($LoginEmail == $value["email"] && $LoginPassword != $value["password"]){
-                echo "<span style='color: red;'> The password is wrong </span>";
+                echo "<span style='color: red;'> The Email or password is wrong </span>";
                 break;
-            }else if($value == $_SESSION["usersData"][count($_SESSION["usersData"])-1]){
-                $notFound= "<span style='color: red;'> You are not registered </span>";
             }
         }
     }
-    if(isset($notFound) && $LoginEmail != "Admin@admin.com"){
-        echo $notFound;
-    }
-
 
 
     if(!empty($LoginEmail)) $x5= $LoginEmail;

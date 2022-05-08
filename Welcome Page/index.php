@@ -18,24 +18,41 @@ session_start();
             text-align: center;
             font-size: 20px;
             font-family: 'Josefin Sans', sans-serif;
+            background-color: #5A54FF; 
         }
-        #container{padding: 2%;}
-        h1{margin: 1%;}
-        p{margin: 1%;}
-        #box{
-            border: solid black 1px;
-            border-radius: 20px;
-            margin: 2% 20%;
+        #container{
+            margin: 1%; 
             padding: 2%;
+            background-color: white; 
+            display: flex;
+            height: 88vh;
+            align-items: center;
+            justify-content: center;
         }
-        #box p {
+        h1{margin:5% 1%;}
+        p{
+            margin:5% 1%;
             text-align: left;
-            margin: 3%;
+        }
+        #welcomeP{
+            margin-bottom: 10%;
+        }
+        #box{
+            width: 80%;
+        }
+        #insideDiv{
+            width:70%;
+            position: relative;
+            left: 20%;
         }
         img{
-            width: 30%;
-            height: 30%;
-            margin: 1%;
+            width: 90%;
+            margin: 5%;
+        }
+        #logouta{
+            text-decoration: none;
+            color: #5A54FF;
+            font-weight: bold;
         }
         @media (min-width:2000px)
         {
@@ -65,20 +82,27 @@ session_start();
             height: 50%;
             }
         }
+        
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>Welcome!</h1>
-        <p>Hello there! We are extremely happy to have you with us and hope you to have a great experience throughout your time here, Enjoy!</p>
-        <img src="../Images/IMG1.png">
         <div id="box">
-            <p>Full Name: <?php echo "<span style='color:#5A54FF; font-weight: bold;'>" .$_SESSION["userName"] 
+            <div id="insideDiv">
+            <h1>Welcome!</h1>
+            <p id="welcomeP">Hello there! We are extremely happy to have you with us and hope you to have a great experience throughout your time here, Enjoy!</p>
+        
+            <p>Full Name: <?php echo "<span style='color:#F54E4E; font-weight: bold;'>" .$_SESSION["userName"] 
             ."</span>"; ?></p>
-            <p>Email: <?php echo "<span style='color:#5A54FF; font-weight: bold;'>" .$_SESSION["userEmail"] 
+            <p>Email: <?php echo "<span style='color:#F54E4E; font-weight: bold;'>" .$_SESSION["userEmail"] 
             ."</span>"; ?></p>
-            <p>Mobile: <?php echo "<span style='color:#5A54FF; font-weight: bold;'>" .$_SESSION["userMobile"] 
+            <p>Mobile: <?php echo "<span style='color:#F54E4E; font-weight: bold;'>" .$_SESSION["userMobile"] 
             ."</span>"; ?></p>
+            </div>
+            <a id="logouta" href="../index.html">Log Out</a>
+        </div>
+        <div id="box2">
+            <img src="../Images/IMG1.png">
         </div>
     </div>
 </body>
